@@ -15,9 +15,6 @@ public class User implements Serializable{
 
 	@Id
 	private String id;//ID
-
-
-	
 	private String mobile;//手机号码
 	private String password;//密码
 	private String nickname;//昵称
@@ -34,113 +31,113 @@ public class User implements Serializable{
 	private Integer fanscount;//粉丝数
 	private Integer followcount;//关注数
 
-	
-	public String getId() {		
+
+	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
 
-	public String getMobile() {		
+	public String getMobile() {
 		return mobile;
 	}
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 
-	public String getPassword() {		
+	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public String getNickname() {		
+	public String getNickname() {
 		return nickname;
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
 
-	public String getSex() {		
+	public String getSex() {
 		return sex;
 	}
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
 
-	public java.util.Date getBirthday() {		
+	public java.util.Date getBirthday() {
 		return birthday;
 	}
 	public void setBirthday(java.util.Date birthday) {
 		this.birthday = birthday;
 	}
 
-	public String getAvatar() {		
+	public String getAvatar() {
 		return avatar;
 	}
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
 
-	public String getEmail() {		
+	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public java.util.Date getRegdate() {		
+	public java.util.Date getRegdate() {
 		return regdate;
 	}
 	public void setRegdate(java.util.Date regdate) {
 		this.regdate = regdate;
 	}
 
-	public java.util.Date getUpdatedate() {		
+	public java.util.Date getUpdatedate() {
 		return updatedate;
 	}
 	public void setUpdatedate(java.util.Date updatedate) {
 		this.updatedate = updatedate;
 	}
 
-	public java.util.Date getLastdate() {		
+	public java.util.Date getLastdate() {
 		return lastdate;
 	}
 	public void setLastdate(java.util.Date lastdate) {
 		this.lastdate = lastdate;
 	}
 
-	public Long getOnline() {		
+	public Long getOnline() {
 		return online;
 	}
 	public void setOnline(Long online) {
 		this.online = online;
 	}
 
-	public String getInterest() {		
+	public String getInterest() {
 		return interest;
 	}
 	public void setInterest(String interest) {
 		this.interest = interest;
 	}
 
-	public String getPersonality() {		
+	public String getPersonality() {
 		return personality;
 	}
 	public void setPersonality(String personality) {
 		this.personality = personality;
 	}
 
-	public Integer getFanscount() {		
+	public Integer getFanscount() {
 		return fanscount;
 	}
 	public void setFanscount(Integer fanscount) {
 		this.fanscount = fanscount;
 	}
 
-	public Integer getFollowcount() {		
+	public Integer getFollowcount() {
 		return followcount;
 	}
 	public void setFollowcount(Integer followcount) {
@@ -148,5 +145,5 @@ public class User implements Serializable{
 	}
 
 
-	
+
 }

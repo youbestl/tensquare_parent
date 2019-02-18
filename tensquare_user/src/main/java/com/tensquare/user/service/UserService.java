@@ -2,10 +2,13 @@ package com.tensquare.user.service;
 
 import com.tensquare.user.dao.UserDao;
 import com.tensquare.user.pojo.User;
+import entity.Result;
+import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
 
@@ -30,6 +33,9 @@ public class UserService {
 
     @Autowired
     private IdWorker idWorker;
+
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
     /**
      * 查询全部列表
@@ -84,6 +90,7 @@ public class UserService {
      */
     public void add(User user) {
         user.setId(idWorker.nextId() + "");
+        user.setPassword(encoder.encode(user.getPassword()));
         userDao.save(user);
     }
 
@@ -162,7 +169,12 @@ public class UserService {
 
     }
 
-    public User login(String mobile, String password) {
-        return userDao.findByMobileAndPassword(mobile, password);
+    public User login(User user) {
+        User userlogin = userDao.findByMobile(user.getMobile());
+        if (user != null && encoder.matches(user.getPassword(), userlogin.getPassword())) {
+            return userlogin;
+        }
+        //登录失败
+        return null;
     }
 }

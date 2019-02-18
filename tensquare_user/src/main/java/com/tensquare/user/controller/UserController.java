@@ -34,12 +34,13 @@ public class UserController {
      * @param user
      * @return
      */
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Result login(@RequestBody User user) {
-        user = userService.login(user.getMobile(), user.getPassword());
-        if (user == null) {
+        User userlogin = userService.login(user);
+        if (userlogin == null) {
             return new Result(false, StatusCode.LOGINERROR, "登录失败");
         }
-        String token = jwtUtil.createJWT(user.getId(), user.getMobile(), "user");
+        String token = jwtUtil.createJWT(userlogin.getId(), user.getMobile(), "user");
         return new Result(true, StatusCode.OK, "登录成功", token);
     }
 
