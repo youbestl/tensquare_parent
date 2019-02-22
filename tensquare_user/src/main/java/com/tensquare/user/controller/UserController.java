@@ -125,4 +125,16 @@ public class UserController {
         return new Result(true, StatusCode.OK, "删除成功");
     }
 
+    /**
+     * 更新好友粉丝数和用户关注数
+     *
+     * @param userid
+     * @param friendid
+     * @param x
+     */
+    @RequestMapping(value = "/{userid}/{friendid}/{x}", method = RequestMethod.PUT)
+    public void updatefanscountandfollowcount(@PathVariable String userid, @PathVariable String friendid, @PathVariable Integer x) {
+        userService.updatefanscountandfollowcount(x, userid, friendid);
+    }
+
 }

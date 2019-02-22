@@ -1,0 +1,23 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: tensquare-config
+  cloud:
+    config:
+      enabled: true
+      server:
+        git:
+          uri: https://gitee.com/youbestl/tensquare-config.git
+          search-paths: /**
+        bootstrap: true
+  rabbitmq:
+    host: 192.168.1.10
+    port: 5672
+    username: zkhy
+    password: zkhy
+management: #暴露触发消息总线的地址
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
